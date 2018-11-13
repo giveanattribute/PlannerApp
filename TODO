@@ -1,0 +1,26 @@
+
+
+**CLIENT**
+   
+    CLASSI:
+
+    //    
+
+    METODI:
+        DISPLAY.JS: completare script per displaying degli stati dell'oggeto passati per paremetro.
+        CLIENT.JS: incorporare tutti gli script in questo js.
+        AUTH.JS: creare possibilità di autenticazione (anche univoca) per proteggere dati e richieste.
+        SEARCH.JS: Rendere intelligente e funzionante la ricerca (real-time get api request).
+
+
+**SERVER**
+
+    CLASSI:
+
+    //
+
+    API:
+        AUTH: verificare possibilità di autenticazione (anche univoca) per proteggere dati e richieste.
+        MESSAGES: completare ed implementare estrapolazione dati (es:oggetto,mittente ecc).
+        LEZIONI: creazione e modifica file json su richiesta client.
+        

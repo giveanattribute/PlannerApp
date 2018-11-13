@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- Head -->
+
+<head>
+    <title>Homepage</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/bootstrap/css/bootstrap.css">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+
+    <style>
+        #custom-card {
+            border: 1px solid #59287a
+        }
+    </style>
+</head>
+<!-- End Head -->
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Ultime Notizie</h1>
+        <div class="row">
+        </div>
+    </div>
+
+    <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    <!-- Global Vendor -->
+    <script src="/assets/vendors/jquery.min.js"></script>
+    <script src="/assets/vendors/jquery.migrate.min.js"></script>
+    <script src="/assets/vendors/popper.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Theme Settings and Calls -->
+    <script src="/assets/js/global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
+    <!-- END JAVASCRIPTS -->
+    <script>
+        var url = 'https://newsapi.org/v2/top-headlines?' +
+            'country=it&' +
+            'apiKey=5ab86827db7244ac9b0bd0a944b8395d';
+        var req = new Request(url);
+        var pippo = fetch(req)
+
+        .then(francesco => {
+                return francesco.json()
+            })
+            .then(notizie => {
+                console.log(notizie)
+
+                for (var i = 0; i < notizie.totalResults; i++) {
+                    console.log(notizie.articles[i].title)
+                        //div
+                    var cardDiv = `
+            <div class="col">
+                <div class="card mt-5"  id ="custom-card" style="width: 18rem;">
+                    <img class="card-img-top" src="${notizie.articles[i].urlToImage}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${notizie.articles[i].title}</h5>
+                        <p class="card-text">${notizie.articles[i].description}</p>
+                        <a id="card-source" href="${notizie.articles[i].source.name}">${notizie.articles[i].source.name}</a>
+                    </div>
+                </div>
+            </div>`
+
+                    var row = $('.row');
+                    //card title card text
+                    $(row).append(cardDiv)
+
+                }
+
+
+                //content
+                //description
+                //source
+                //title
+                //urlToImage
+            })
+    </script>
+</body>
+
+<!-- End Body -->
+
+</html>
