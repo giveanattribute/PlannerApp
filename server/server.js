@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express();
 const req = require('request');
-const lezioni = require('./routes/lezioni')
-const news = require('./routes/news.js') //ToDo
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
@@ -10,7 +8,7 @@ const weather = require('yahoo-weather')
 const morgan = require('morgan')
 
 // process.env.PORT 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 // simple morgan logger in file
 
