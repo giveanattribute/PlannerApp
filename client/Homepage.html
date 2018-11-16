@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:8080/display -->
+<html lang="en" class="no-js">
+<!-- Head -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Homepage</title>
+
+    <!-- Meta -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://localhost:8080/favicon.ico" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link href="public/css" rel="stylesheet">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="public/bootstrap.css">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="public/styles.css">
+    <link rel="stylesheet" href="public/jkeyboard.css">
+    <style>
+        input {
+            outline: none;
+        }
+        
+        input[type=search] {
+            background: white url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+            border: solid 1px #ccc;
+            padding: 9px 10px 9px 32px;
+            width: 100px;
+            -webkit-border-radius: 10em;
+            -moz-border-radius: 10em;
+            border-radius: 10em;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            transition: all .5s;
+        }
+        
+        input::-webkit-search-decoration,
+        input::-webkit-search-cancel-button {
+            display: none;
+        }
+        
+        input[type=search]:focus {
+            width: 130px;
+            background-color: #fff;
+            border-color: #59287a;
+            -webkit-box-shadow: 0 0 5px rgb(89, 40, 122, .5);
+            -moz-box-shadow: 0 0 5px rgb(89, 40, 122, .5);
+            box-shadow: 0 0 5px rgb(89, 40, 122, .5);
+        }
+        
+        .nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            white-space: nowrap;
+            position: absolute;
+            width: 100vh;
+            line-height: 2em;
+            transform-origin: left top;
+            top: 50%;
+            transform: translate(5%, 100%) rotate(-90deg);
+        }
+        
+        .nav li {
+            display: inline-block;
+            margin: 0 2em;
+        }
+        
+        #btn-custom:hover {
+            background: transparent;
+            color: #59287a
+        }
+        
+        @media (max-width: 360px) {
+            .nav {
+                list-style: none;
+                margin: auto;
+                padding: 0;
+                text-align: center;
+                white-space: nowrap;
+                position: relative;
+                transform: translate(0%, 0%) rotate(0deg);
+                display: inline-block;
+                width: 50px;
+            }
+            .nav li {
+                display: inline;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<!-- End Head -->
+
+<body cz-shortcut-listen="true">
+    <ul class="nav">
+        <li><button type="button" class="btn btn-outline-primary" id="btn-custom">Universita'</button></li>
+        <li>Tempo</li>
+        <li>News</li>
+        <li>Messaggi</li>
+    </ul>
+    <div class="container">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="jumbotron text-center text-primary">
+                        <h1 class="display-4">Service Title</h1>
+                        <p class="lead">Info description</p>
+                        <p class="lead">&nbsp;</p>
+                        <p class="lead">&nbsp;</p>
+
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="http://localhost:8080/display#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="http://localhost:8080/display#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <form>
+            <input type="search" placeholder="Search" id="cerca">
+            <div id="keyboard"></div>
+        </form>
+
+    </div>
+
+    <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    <!-- Global Vendor -->
+    <script src="./Homepage_files/jquery.min.js.download"></script>
+    <script src="./Homepage_files/jquery.migrate.min.js.download"></script>
+    <script src="./Homepage_files/popper.min.js.download"></script>
+    <script src="./Homepage_files/bootstrap.min.js.download"></script>
+
+    <!-- Theme Settings and Calls -->
+    <script src="./Homepage_files/global.js.download"></script>
+    <script src="./Homepage_files/jkeyboard.js.download"></script>
+    <script src="./Homepage_files/client.js.download"></script>
+    <script src="./Homepage_files/weather.js.download"></script>
+    <script src="./Homepage_files/client.js.download"></script>
+    <script>
+        $('body').on("click", function(event) {
+            $('#keyboard').jkeyboard({
+                layout: "english",
+                input: $('#cerca')
+            });
+            if (document.activeElement.id === 'cerca') {
+
+                $('#keyboard').show("slow", function() {})
+            } else
+                $('#keyboard').hide("slow", function() {})
+
+        })
+    </script>
+    <script>
+    </script>
+    <!-- END JAVASCRIPTS -->
+
+    <script>
+        //carouselIndicator
+        const btn = document.querySelector('button');
+
+        //btn.addEventListener('click', getData);
+
+
+
+
+
+
+
+        // var days = ["", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì"];
+        // var classe = 0;
+        // var url = `https://anyorigin.com/go?url=https%3A//corsi.unisa.it/unisa-rescue-page/ajax/case/calendarioOrariFull%3Fanno%3D2018%26corso%3D05121%26anno2%3DPDS0-2018-${this.classe}%257C2%26visualizzazione%3D1&callback=?`
+
+
+        // //uni.getLezioni()
+        // // function initialize() {
+        // //     var url = `https://anyorigin.com/go?url=https%3A//corsi.unisa.it/unisa-rescue-page/ajax/case/calendarioOrariFull%3Fanno%3D2018%26corso%3D05121%26anno2%3DPDS0-2018-${this.classe}%257C2%26visualizzazione%3D1&callback=?`
+
+
+
+        // //     )
+        // // }
+        // // //fetch data
+        // $.getJSON('https://anyorigin.com/go?url=https%3A//corsi.unisa.it/unisa-rescue-page/ajax/case/calendarioOrariFull%3Fanno%3D2018%26corso%3D05121%26anno2%3DPDS0-2018-0%257C2%26visualizzazione%3D1&callback=?', (data) => {
+        //     var info = [];
+        //     info = data.contents.celle;
+        //     var size = (Object.keys(info).length) - 1;
+        //     var today = new Date();
+        //     today = today.getDay();
+        //     console.log(info);
+        //     for (var i = 1; i <= 5; i++) {
+
+        //         var lezioniDelGiorno = info.filter(function(item) {
+        //             return item.giorno == i;
+        //         });
+        //         if (i == today) {
+        //             var day = 'Oggi';
+        //         } else
+        //             var day = days[i];
+        //         //TODO:
+        //         /*Converti numero giorno in stringa giorno
+        //         es: 0 == Lunedì
+        //         */
+        //         getLezioneInfo(lezioniDelGiorno, day);
+
+
+        //     }
+
+        // })
+
+        // function getLezioneInfo(lezioniDelGiorno, day) {
+        //     for (var i = lezioniDelGiorno.length - 1; i >= 0; i--) {
+        //         console.log(lezioniDelGiorno.length)
+
+
+        // var carouselIndicatori = $('.carousel-indicators');
+        // var carouselIndicatore = `<li data-target="#carouselExampleIndicators" data-slide-to="${i}"</li>`;
+        // var carouselInner = $('.carousel-inner')
+        // var carouselItem = `<div class="carousel-item">
+        //             <div class="jumbotron bg-primary text-light text-center">
+        //                 <h1 class="display-4">${day}</h1>
+        //                 <p class="lead">${lezioniDelGiorno[i].nome_insegnamento}</p>
+        //                 <p class="lead">${lezioniDelGiorno[i].orario}</p>
+        //                 <p class="lead">${lezioniDelGiorno[i].aula}</p>
+
+        //             </div>
+        //         </div>`
+
+
+
+
+
+
+
+        //         var $rows = $('.display-4');
+        //         $('#cerca').keyup(function() {})
+
+        //         $(carouselInner).append(carouselItem);
+        //         //if ()
+        //         $(carouselIndicatori).append(carouselIndicatore);
+
+        //     }
+        // }
+
+        // var cardDiv = `
+        //             <div class="col">
+        //                 <div class="card mt-5"  id ="custom-card" style="width: 18rem;">
+        //                     <img class="card-img-top" src="" alt="Card image cap">
+        //                     <div class="card-body">
+        //                         <h5 class="card-title">prova</h5>
+        //                         <p class="card-text">prova</p>
+        //                         <a id="card-source" href="prova</a>
+        //                     </div>
+        //                 </div>
+        //             </div>`
+
+        // var row = $('.row');
+        // //card title card text
+        // $(row).append(cardDiv)
+    </script>
+
+
+    <!-- End Body -->
+
+</body>
+
+</html>
